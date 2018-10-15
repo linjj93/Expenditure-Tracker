@@ -1,0 +1,23 @@
+h1 {
+  font-family: 'Rancho', cursive;
+}
+
+#item, #amount {
+  display: inline-block;
+
+}
+
+th, td {
+  padding: 0;
+}
+
+#submit-btn {
+  padding: 10px;
+  width: 115%;
+}
+
+.dropdown-toggle {
+  height: 75%;
+  width: 115%;
+  font-size: 105%;
+}
