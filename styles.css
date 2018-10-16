@@ -1,23 +1,74 @@
 h1 {
   font-family: 'Rancho', cursive;
+  font-size: 50px;
 }
 
-#item, #amount {
+.dot {
+  height: 120px;
+  width: 120px;
+  background-color: #bbb;
+  border-radius: 50%;
   display: inline-block;
+}
 
+.column {
+  float: left;
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+#item {
+  width: 600px;
+}
+
+#amount {
+  width: 100px;
+}
+
+
+#submit {
+  padding: 0;
+  width: 100px;
+  margin-top: 7px;
+}
+
+.form {
+  padding: 0 auto;
+}
+
+label {
+  font-family: 'Acme', sans-serif;
 }
 
 th, td {
   padding: 0;
 }
 
-#submit-btn {
-  padding: 10px;
+#dropdown, #item, #amount, #submit {
+  margin-right: 10px;
+  font-family: 'Acme', sans-serif;
+}
+
+
+.dropdown-toggle {
+  padding: 0;
+  height: 65%;
   width: 115%;
 }
 
-.dropdown-toggle {
-  height: 75%;
-  width: 115%;
-  font-size: 105%;
+.information {
+  margin-top:35px;
+}
+
+.category-btn {
+  border-style: solid;
+  border-width: thick;
+  width: 200px;
+  height: 100px;
 }
