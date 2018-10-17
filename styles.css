@@ -3,48 +3,50 @@ h1 {
   font-size: 50px;
 }
 
-.dot {
-  height: 120px;
-  width: 120px;
-  background-color: #bbb;
-  border-radius: 50%;
+h3 {
   display: inline-block;
 }
 
+.dot {
+  background-color: #bbb;
+}
+
+.dot h6 {
+  display: inline-block;
+}
 .income-box, .savings-box {
   border: 2px double black;
   border-radius: 25%;
   height: 100px;
   text-align: center;
-  width: 90%;
+
   font-family: 'Acme', sans-serif;
 }
 
-.column {
-  float: left;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
+.income-input {
+  width: 30%;
+  height: 30%;
 }
 
 #item {
-  width: 600px;
+  width: 350px;
 }
 
 #amount {
   width: 100px;
-}
 
+}
 
 #submit {
   padding: 0;
   width: 100px;
   margin-top: 7px;
+  margin-left: 135px;
+}
+
+.income-box button {
+  height: 25%;
+  width: 30%;
 }
 
 .form {
@@ -53,31 +55,35 @@ h1 {
 
 label {
   font-family: 'Acme', sans-serif;
+  display: inline-block;
+  width: 20%;
 }
 
 th, td {
   padding: 0;
 }
 
-#dropdown, #item, #amount, #submit {
+#expense-type, #item, #amount, #submit, #date-dropdown {
   margin-right: 10px;
   font-family: 'Acme', sans-serif;
 }
 
-
-.dropdown-toggle {
-  padding: 0;
-  height: 65%;
-  width: 115%;
+#expense-type {
+  margin-left: 58px;
 }
 
-.information {
-  margin-top:35px;
-}
 
-.category-btn {
+
+
+.categories {
   border-style: solid;
-  border-width: thick;
-  width: 200px;
-  height: 100px;
+}
+
+.form {
+  border-style: solid;
+  padding: 20px;
+}
+
+.table {
+  width: 95%;
 }
