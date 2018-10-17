@@ -11,6 +11,15 @@ h1 {
   display: inline-block;
 }
 
+.income-box, .savings-box {
+  border: 2px double black;
+  border-radius: 25%;
+  height: 100px;
+  text-align: center;
+  width: 90%;
+  font-family: 'Acme', sans-serif;
+}
+
 .column {
   float: left;
 }
