@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://fonts.googleapis.com/css?family=Acme|Patrick+Hand|Rancho" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"></link>
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <div class = "container mx-auto">
+<!--      <div class = "row">
+        <h1 class = "mx-auto">Track your expenditure!</h1>
+      </div>
+-->
+<!-- form start -->
+
+
+
+
+
+
+      <div class = "row">
+
+        <div class = "col-4">
+
+          <div class = "income-box my-2 mx-5">
+            <p>Your Income:</p>
+            <h3 id = "income">$ 3000</h3>
+            <button type="button" class = "text-center">edit</button>
+          </div>
+
+          <div class = "categories text-justify my-2 mx-5">
+
+            <div class="dot bg-primary text-center text-white">
+              <h6>F&B<span class = "ml-5">$ 0.00</span></h6>
+            </div>
+
+            <div class="dot bg-danger text-center text-white">
+              <h6>Shopping<span class = "ml-5">$ 0.00</span></h6>
+            </div>
+
+            <div class="dot bg-secondary text-center text-white">
+              <h6>Transport<span class = "ml-5">$ 0.00</span></h6>
+            </div>
+
+            <div class="dot bg-dark text-center text-white">
+              <h6>Others<span class = "ml-5">$ 0.00</span></h6>
+            </div>
+
+          </div>
+
+
+          <div class = "savings-box mx-5">
+            <p>You are <span class = "text-success">Saving</span>:</p>
+            <h3 id = "savings-amount"></h3>
+          </div>
+
+          <div class = "calendar">
+            <p>insert calendar here. users can click a date and choose which day to see.</p>
+          </div>
+
+        </div>
+
+
+
+<!--          <div class = "mb-2 col text-center category-btn text-white bg-primary mx-2 pt-2 rounded border border-info">
+            <h6>F&B</h6>
+            <p>$ 0.00</p>
+          </div>
+          <div class = "mb-2 col text-center category-btn text-white bg-danger mx-2 pt-2 rounded border border-info">
+            <h6>Shopping</h6>
+            <p>$ 0.00</p>
+          </div>
+          <div class = "mb-2 col text-center category-btn text-white bg-secondary mx-2 pt-2 rounded border border-info">
+            <h6>Transport</h6>
+            <p>$ 0.00</p>
+          </div>
+          <div class = "mb-2 col text-center category-btn text-white bg-dark mx-2 pt-2 rounded border border-info">
+            <h6>Others</h6>
+            <p>$ 0.00</p>
+          </div> -->
+
+        <div class = "col-6">
+          <div class = "form my-2">
+
+            <label for="date-dropdown">Date</label>
+              <input class = "mb-2" type="date" id="date-dropdown" name="trip"
+                     value="2018-01-01"
+                     min="2018-01-01" max="2018-12-31" />
+
+
+            <select id = "expense-type" class = "mb-2 p-1">
+                <option selected disabled>Type of Expense</option>
+                <option value="F&B">F&B</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Transport">Transport</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <div>
+            <label for="item">Item</label>
+            <input type="text" id="item" placeholder="Enter item" name = "item">
+            </div>
+
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name = "amount">
+
+
+            <button class = "btn-primary" type="button" id = "submit">Submit</button>
+          </div>
+
+
+          <div>
+            <table class="table" align = "center">
+              <thead class="thead-dark">
+                <tr class = "row">
+                  <th class = "col-2 number">#</th>
+                  <th class = "col-2 date">Date</th>
+                  <th class = "col-5 item">Item</th>
+                  <th class = "col-3 amount text-center">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+    </div> <!-- /container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

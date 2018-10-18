@@ -1,0 +1,89 @@
+h1 {
+  font-family: 'Rancho', cursive;
+  font-size: 50px;
+}
+
+h3 {
+  display: inline-block;
+}
+
+.dot {
+  background-color: #bbb;
+}
+
+.dot h6 {
+  display: inline-block;
+}
+.income-box, .savings-box {
+  border: 2px double black;
+  border-radius: 25%;
+  height: 100px;
+  text-align: center;
+
+  font-family: 'Acme', sans-serif;
+}
+
+.income-input {
+  width: 50%;
+  height: 50%;
+}
+
+#item {
+  width: 350px;
+}
+
+#amount {
+  width: 100px;
+
+}
+
+#submit {
+  padding: 0;
+  width: 100px;
+  margin-top: 7px;
+  margin-left: 135px;
+}
+
+.income-box button {
+  height: 25%;
+  width: 30%;
+}
+
+.form {
+  padding: 0 auto;
+}
+
+label {
+  font-family: 'Acme', sans-serif;
+  display: inline-block;
+  width: 20%;
+}
+
+th, td {
+  padding: 0;
+}
+
+#expense-type, #item, #amount, #submit, #date-dropdown {
+  margin-right: 10px;
+  font-family: 'Acme', sans-serif;
+}
+
+#expense-type {
+  margin-left: 58px;
+}
+
+
+
+
+.categories {
+  border-style: solid;
+}
+
+.form {
+  border-style: solid;
+  padding: 20px;
+}
+
+.table {
+  width: 95%;
+}

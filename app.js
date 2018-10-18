@@ -1,11 +1,11 @@
-const editIncomeButton = document.getElementById('income').nextElementSibling;
+const editIncomeButton = document.querySelector('.income-box button');
 const submitButton = document.getElementById('submit');
 const date = document.getElementById('date');
 const itemInfo = document.getElementById('item');
 const amountSpent = document.getElementById('amount');
 const typeOfExpense = document.getElementById('expense-type');
-const categoryTitles = document.querySelectorAll('.dot h6');
-const tableBody = document.getElementsByTagName('table')[0].getElementsByTagName('tbody')[0];
+const categoryTitles = document.querySelectorAll('.categories th');
+const tableBody = document.getElementsByClassName('table')[0].getElementsByTagName('tbody')[0];
 let itemCounter = 1;
 let savingsAmount = document.getElementById('savings-amount');
 let incomeAmount = document.getElementById('income');
@@ -25,10 +25,10 @@ function notNumber(arg) {
 }
 
 
-const income = parseFloat(prompt("Enter your income."));
-
-incomeAmount.textContent = "$ " + income;
-savingsAmount.textContent = "$ " + income;
+// const income = parseFloat(prompt("Enter your income."));
+//
+// incomeAmount.textContent = income;
+// savingsAmount.textContent = "$ " + incomeAmount.textContent;
 
 submitButton.addEventListener('click', () => {
   if (formNotComplete()) {
@@ -38,47 +38,58 @@ submitButton.addEventListener('click', () => {
 
   if (notNumber(amountSpent.value)) {
     alert("Invalid amount entered.");
+    amountSpent.value = "";
     return;
   }
 
 
   const tr = document.createElement('tr');
   const th = document.createElement('th');
-  const tdDate = document.createElement('td');
   const tdItem = document.createElement('td');
   const tdAmount = document.createElement('td');
+  const tdEditButton = document.createElement('button');
+  tdEditButton.textContent = "edit";
+  const tdDeleteButton = document.createElement('button');
+  tdDeleteButton.textContent = "delete";
 
   //row number
   th.textContent = itemCounter;
-  th.className = "col-2 number";
-
-  //date field
-  //tdDate.textContent =
-  tdDate.className = "col-2 date";
+  th.className = "number-col";
 
   //item description
   tdItem.textContent = itemInfo.value;
-  tdItem.className = "col-5 item";
+  tdItem.className = "item-col";
 
   //amount spent
   tdAmount.textContent = "$ " + parseFloat(amountSpent.value).toFixed(2);
-  tdAmount.className = "col-3 amount text-center";
+  tdAmount.className = "amount-col";
+
+  //buttons
+  tdEditButton.className = "change-col edit-button";
+  tdDeleteButton.className = "change-col delete-button";
+
 
   tr.className = "row";
   tr.appendChild(th);
-  tr.appendChild(tdDate);
   tr.appendChild(tdItem);
   tr.appendChild(tdAmount);
+  tr.appendChild(tdEditButton);
+  tr.appendChild(tdDeleteButton);
   tableBody.appendChild(tr);
+
 
   for (let i = 1; i < typeOfExpense.children.length; i++) {
     if (typeOfExpense.children[i].selected) {
       for (let j = 0; j < categoryTitles.length; j++) {
         if (categoryTitles[j].firstChild.textContent == typeOfExpense.children[i].value) {
-          let cost = parseFloat(categoryTitles[j].firstElementChild.textContent.slice(2));
-          savingsAmount.textContent = "$ " + String(parseFloat(savingsAmount.textContent.slice(2)) - parseFloat(amountSpent.value));
+          let cost = parseFloat(categoryTitles[j].nextElementSibling.textContent.slice(2));
           cost += parseFloat(amountSpent.value);
-          categoryTitles[j].firstElementChild.textContent = "$ " + String(cost.toFixed(2));
+          categoryTitles[j].nextElementSibling.textContent = "$ " + String(cost.toFixed(2));
+          let totalSpend = parseFloat(categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent.slice(2));
+          totalSpend += parseFloat(amountSpent.value);
+          categoryTitles[categoryTitles.length - 1].nextElementSibling.textContent = "$ " + String(totalSpend.toFixed(2));
+          savingsAmount.textContent = "$ " + String(parseFloat(savingsAmount.textContent.slice(2)) - parseFloat(amountSpent.value));
+
         }
       }
     }
@@ -95,8 +106,8 @@ submitButton.addEventListener('click', () => {
 
 
 editIncomeButton.addEventListener('click', () => {
-  let incomeText = updateIncomeButton.previousElementSibling;
-  if (incomeText.firstElementChild) {
+  const incomeText = document.getElementById('income');
+  if (incomeText.textContent == "" ) {
     const newIncome = incomeText.firstElementChild.value;
     let check = true;
     while (check) {
@@ -108,10 +119,13 @@ editIncomeButton.addEventListener('click', () => {
         check = false;
       }
     }
+    editIncomeButton.textContent = "edit";
     incomeText.innerHTML = "";
-    incomeText.textContent = "$ " + newIncome;
-  } else if (incomeText.tagName === "H3") {
+    incomeText.textContent = newIncome;
+    savingsAmount.textContent = "$ " + newIncome;  //handle expenditure in future
+  } else if (incomeText.tagName === "SPAN") {
     incomeText.innerHTML = "<input type = 'text' size = '5'>";
+    editIncomeButton.textContent = "update";
   }
 
 })
