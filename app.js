@@ -11,6 +11,7 @@ let savingsAmount = document.getElementById('savings-amount');
 let incomeAmount = document.getElementById('income');
 
 
+
 function formNotComplete() {
   const dropdownChoice = document.querySelector('#expense-type');
   if (dropdownChoice[0].selected) {
@@ -100,10 +101,42 @@ submitButton.addEventListener('click', () => {
   amountSpent.value = ""
   ;
 
+  // name edit and delete buttons
+  const deleteEntryButton = document.getElementsByClassName('delete-button')[0];
+  const editEntryButton = document.getElementsByClassName('edit-button')[0];
+
+  //delete entry
+  deleteEntryButton.addEventListener('click', () => {
+    const tableRows = Array.from(tableBody.children);
+    const parentRow = deleteEntryButton.parentNode;
+    if (tableRows.length > 1) {
+      const startingIndex = tableRows.indexOf(parentRow);
+      for (let i = startingIndex + 1; i < (tableRows.length - startingIndex); i++) {
+        const numberColumn = tableRows[i].firstElementChild;
+        console.log('debug check');
+        let serialNumber = parseInt(numberColumn.textContent)
+        serialNumber -= 1;
+        numberColumn.textContent = serialNumber;
+      }
+    }
+
+    tableBody.removeChild(parentRow);
+    itemCounter -= 1;
+    //change number of every entry thereafter by -1
+
+
+  })
+
+  //edit entry
+  editEntryButton.addEventListener('click', () => {
+
+  })
+
+
 
 })
 
-
+//edit income
 
 editIncomeButton.addEventListener('click', () => {
   const incomeText = document.getElementById('income');
