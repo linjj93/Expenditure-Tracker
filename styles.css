@@ -33,7 +33,6 @@ body {
   text-align: center;
   margin: 0;
   padding-bottom: 10px;
-  border-radius: 25%;
 
 }
 
@@ -49,12 +48,15 @@ body {
   height: 100%;
 }
 
-.income-box button h3 {
+.income-box button p {
   margin: 1%;
   font-family: 'Mali', cursive;
 
 }
 
+.income-box span input {
+  height: 25px;
+}
 .expenses-table {
 
 }
@@ -74,6 +76,12 @@ body {
 #savings-amount, .savings-box p {
   margin: 5px;
 }
+
+#total-spending {
+  color: white;
+}
+
+
 
 
 /* form */
@@ -166,18 +174,50 @@ label {
 /* calendar */
 
 
-
+/*calendar*/
 .calendar-div {
   background-color: #58bad8;
   grid-area: c;
+  /* -moz-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow:0px 3px 3px rgba(0, 0, 0, 0.25);  */
+  margin: 0 auto;
+  /* font: 13px/1.5 "Helvetica Neue", Helvatica, Arial, san-serif; */
+  display:inline-block;
+  align-items: stretch;
 }
 
+.calendar-div .header {
+    cursor:default;
+    background: #cd310d;
+    background: -moz-linear-gradient(top, #b32b0c, #cd310d);
+    background: -webkit-gradient(linear, left top, left bottom, from(#b32b0c), to(#cd310d));
+    height: 34px;
+    position: relative;
+    color:#fff;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight:bold;
+    text-shadow:0px -1px 0 #87260C;
+    text-transform: uppercase;
+}
+
+.calendar-div .header span {
+    display:inline-block;
+    line-height:34px;
+}
+
+
+/*table*/
 .table-div {
   padding: 5px;
   background-color: #96ceb4;
   grid-area: t;
-  font-size: 70%;
-
+  font-size: 80%;
+  max-width: 900px;
 }
 
 .table {
@@ -185,7 +225,6 @@ label {
   background-color: #566573;
   color: #ff6f69;
   border: 1px solid #ff6f69;
-  border-radius: 5%;
 }
 /* .table tr:nth-child(odd) {
   background: #ddd;
@@ -193,24 +232,48 @@ label {
 }*/
 
 
+.table tbody tr {
+  height: 50px;
+  font-size: 120%;
+  color: white;
+}
+
 .number-col {
   width: 5%;
   margin-bottom: 5px;
 }
 
-.item-col {
-  width: 50%;
-  margin-bottom: 5px;
-}
-
-.amount-col {
+.type-col {
   width: 15%;
   margin-bottom: 5px;
 }
 
+.item-col {
+  width: 32%;
+  margin-bottom: 5px;
+}
+
+
+.amount-col {
+  width: 12%;
+  margin-bottom: 5px;
+}
+
 .change-col {
-  width: 30%;
+  width: 8%;
   margin-bottom: 5px;
   font-family: 'Mali', cursive;
 
 }
+
+.edit-button, .delete-button {
+  width: 45%;
+  height: 40px;
+  font-family: 'Mali', cursive;
+}
+
+/*
+.edit-button {
+  background-image: url(images/edit.png);
+  background-size: 100% 100%;
+}*/
